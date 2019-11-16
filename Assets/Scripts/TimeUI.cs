@@ -7,7 +7,6 @@ using System;
 public class TimeUI : MonoBehaviour
 {
     Text time;
-    public GameObject Player;
 
     private float currTime;
 

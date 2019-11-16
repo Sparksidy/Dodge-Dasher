@@ -8,8 +8,8 @@ public class GameManager : MonoBehaviour
         if(gameHasEnded == false)
         {
             gameHasEnded = true;
-            Debug.Log("Game Over");
-            Restart();
+            
+            SceneManager.LoadScene("GameOver");
         }
     }
 

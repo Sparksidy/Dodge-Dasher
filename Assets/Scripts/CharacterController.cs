@@ -26,6 +26,7 @@ public class CharacterController : MonoBehaviour
     private bool isDashing;
     private bool isMoving;
     private bool generateNewDashPoint = true;
+    private int cherrypickups = 0;
 
     [System.NonSerialized]
     public bool increaseStamina;
@@ -33,12 +34,16 @@ public class CharacterController : MonoBehaviour
     [SerializeField]
     GameObject playerGhost;
 
+    AudioSource source;
+
 
     void Start()
     {
         dashTime = startDashtime;
-        Cursor.visible = false;
+        Cursor.visible = true;
         increaseStamina = false;
+
+        source = this.GetComponent<AudioSource>();
     }
 
     void Update()
@@ -50,7 +55,7 @@ public class CharacterController : MonoBehaviour
         {
             dashing = true;
             nextDash = Time.time + dashRate;
-            
+            source.Play();
         }
 
         animator.SetFloat("Horizontal", movement.x);
@@ -64,6 +69,8 @@ public class CharacterController : MonoBehaviour
         }
         else
             isMoving = false;
+
+        PlayerPrefs.SetInt("score", (int)score);
 
     }
 
@@ -105,6 +112,8 @@ public class CharacterController : MonoBehaviour
 
     public void Score()
     {
+        ++cherrypickups;
+
         score += perDashPointValue;
 
         DashBarUI.dashPoints += perDashPointValue;
@@ -179,6 +188,10 @@ public class CharacterController : MonoBehaviour
         return score;
     }
 
+    public int GetCherryPickups()
+    {
+        return cherrypickups;
+    }
 
 }
 
