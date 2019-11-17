@@ -8,6 +8,8 @@ public class CharacterController : MonoBehaviour
     public GameObject bulletPrefab;
     public GameObject[] powerUpsPrefabs;
 
+    public Joystick joystick;
+
     public Vector2 powerUpsSpawnPositionsRange;
 
     public float moveSpeed;
@@ -48,15 +50,43 @@ public class CharacterController : MonoBehaviour
 
     void Update()
     {
-        movement.x = Input.GetAxis("Horizontal");
-        movement.y = Input.GetAxis("Vertical");
+        #if UNITY_STANDALONE
+            movement.x = Input.GetAxis("Horizontal");
+            movement.y = Input.GetAxis("Vertical");
+        #endif
 
+        #if UNITY_IOS
+            movement.x = joystick.Horizontal;
+            movement.y = joystick.Vertical;
+        #endif
+
+    #if UNITY_STANDALONE
         if (Input.GetKeyDown(KeyCode.Space) && !dashing && Time.time > nextDash && StaminaBarUI.stamina > 10)
         {
             dashing = true;
             nextDash = Time.time + dashRate;
             source.Play();
         }
+    #endif
+
+    #if UNITY_IOS
+         if(Input.touchCount > 0)
+        {
+            Touch touch = Input.GetTouch(1);
+            Debug.Log("Touch Input detected");
+            if(touch.position.x > Screen.width / 2)
+            {
+                Debug.Log("Right Touch");
+                 if (!dashing && Time.time > nextDash && StaminaBarUI.stamina > 10)
+                {
+                    Debug.Log("Dashing");
+                    dashing = true;
+                    nextDash = Time.time + dashRate;
+                    source.Play();
+                }
+            }
+        }
+    #endif
 
         animator.SetFloat("Horizontal", movement.x);
         animator.SetFloat("Vertical", movement.y);
