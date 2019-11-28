@@ -8,6 +8,7 @@ public class Bullet : MonoBehaviour
     public Rigidbody2D rb;
     public float Bulletlife;
     public int PerBulletDamage = 25;
+    public Animator anim;
 
     public GameObject Target;
 
@@ -26,21 +27,24 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Destroy(gameObject, Bulletlife);
+        //Destroy(gameObject, Bulletlife);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
         {
+            
             Debug.Log("Collided with player");
-
             CharacterController player = collision.GetComponent<CharacterController>();
 
             if(player)
             {
                 player.TakeDamage(PerBulletDamage);
-                Destroy(gameObject);
+                speed = 0;
+                Debug.Log("The speed is " + speed);
+                anim.Play("Bullet_Destroy");
+                Destroy(gameObject, anim.GetCurrentAnimatorStateInfo(0).length);
             }
         }
     }

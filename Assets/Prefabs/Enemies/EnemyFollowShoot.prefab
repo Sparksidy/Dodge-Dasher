@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 5355297093588720784}
   - component: {fileID: 5355297093588720812}
   - component: {fileID: 5355297093588720815}
-  - component: {fileID: 4221030755862094685}
   - component: {fileID: 4221030755862094684}
+  - component: {fileID: 1350452580270108220}
   m_Layer: 10
   m_Name: EnemyFollowShoot
   m_TagString: Enemy
@@ -61,6 +61,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -73,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: debedec4b97ed834aa1dbaf5dd7a8b1f, type: 3}
+  m_Sprite: {fileID: -6079460876768766, guid: b68ac9f8eef01034eb1ca3ed1829e1fe, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -96,13 +97,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f0644e95cfeb53488a929a002b10992, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  anim: {fileID: 1350452580270108220}
+  speed: 2
   followDuration: 5
   breakDuration: 1
   damage: 5
-  bloodEffect: {fileID: 0}
   health: 50
+  deathAnimationDelay: 0.25
   enemytype: 2
+  bloodEffect: {fileID: 0}
 --- !u!50 &5355297093588720812
 Rigidbody2D:
   serializedVersion: 4
@@ -137,38 +140,19 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.021588922, y: 0.008333683}
+  m_Offset: {x: 0.005105853, y: -0.020314187}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.6666667, y: 0.6666667}
+    oldSize: {x: 0.875, y: 1}
     newSize: {x: 2.13, y: 3.47}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.46175456, y: 0.5461111}
+  m_Size: {x: 0.79894674, y: 0.9879865}
   m_EdgeRadius: 0
---- !u!95 &4221030755862094685
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5355297093588720787}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 13b3aeae378a7be419d0abf7b3277869, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &4221030755862094684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184,3 +168,22 @@ MonoBehaviour:
   bulletShootInterval: 1
   bulletPrefab: {fileID: 5988741316975603006, guid: 07412c94607d34341b0ace0fd18a3fe5,
     type: 3}
+--- !u!95 &1350452580270108220
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5355297093588720787}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 83405112acd7f437c91d577d8ad3d3ce, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

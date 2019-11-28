@@ -60,33 +60,14 @@ public class CharacterController : MonoBehaviour
             movement.y = joystick.Vertical;
         #endif
 
-    #if UNITY_STANDALONE
-        if (Input.GetKeyDown(KeyCode.Space) && !dashing && Time.time > nextDash && StaminaBarUI.stamina > 10)
-        {
-            dashing = true;
-            nextDash = Time.time + dashRate;
-            source.Play();
-        }
-    #endif
-
-    #if UNITY_IOS
-         if(Input.touchCount > 0)
-        {
-            Touch touch = Input.GetTouch(1);
-            Debug.Log("Touch Input detected");
-            if(touch.position.x > Screen.width / 2)
+        #if UNITY_STANDALONE
+            if (Input.GetKeyDown(KeyCode.Space) && !dashing && Time.time > nextDash && StaminaBarUI.stamina > 10)
             {
-                Debug.Log("Right Touch");
-                 if (!dashing && Time.time > nextDash && StaminaBarUI.stamina > 10)
-                {
-                    Debug.Log("Dashing");
-                    dashing = true;
-                    nextDash = Time.time + dashRate;
-                    source.Play();
-                }
+                dashing = true;
+                nextDash = Time.time + dashRate;
+                source.Play();
             }
-        }
-    #endif
+        #endif
 
         animator.SetFloat("Horizontal", movement.x);
         animator.SetFloat("Vertical", movement.y);
@@ -101,6 +82,18 @@ public class CharacterController : MonoBehaviour
             isMoving = false;
 
         PlayerPrefs.SetInt("score", (int)score);
+
+    }
+
+    public void Dash()
+    {
+        if (!dashing && Time.time > nextDash && StaminaBarUI.stamina > 10)
+        {
+            
+            dashing = true;
+            nextDash = Time.time + dashRate;
+            source.Play();
+        }
 
     }
 
@@ -127,6 +120,8 @@ public class CharacterController : MonoBehaviour
             }
         }
     }
+
+   
 
     public void TakeDamage(int damage)
     {

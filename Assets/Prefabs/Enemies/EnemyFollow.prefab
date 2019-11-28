@@ -60,6 +60,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -95,12 +96,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f0644e95cfeb53488a929a002b10992, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  anim: {fileID: 7276180066831983512}
+  speed: 2
   followDuration: 5
   breakDuration: 2
   damage: 10
-  bloodEffect: {fileID: 0}
   health: 50
+  deathAnimationDelay: 0.25
+  enemytype: 0
+  bloodEffect: {fileID: 0}
 --- !u!50 &1459136001914925088
 Rigidbody2D:
   serializedVersion: 4
@@ -135,18 +139,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.021588922, y: 0.008333683}
+  m_Offset: {x: 0.019699082, y: 0.017125607}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.6666667, y: 0.6666667}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 2.13, y: 3.47}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.46175456, y: 0.5461111}
+  m_Size: {x: 0.82155466, y: 0.9625125}
   m_EdgeRadius: 0
 --- !u!95 &7276180066831983512
 Animator:

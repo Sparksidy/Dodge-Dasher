@@ -59,6 +59,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -116,9 +117,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.009742141, y: -0.034097433}
+  m_Offset: {x: -0.0462842, y: -0.018064976}
   serializedVersion: 2
-  m_Radius: 0.2710607
+  m_Radius: 0.4509423
 --- !u!114 &8685647455876582184
 MonoBehaviour:
   m_ObjectHideFlags: 0

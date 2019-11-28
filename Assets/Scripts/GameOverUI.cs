@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 
@@ -19,5 +20,10 @@ public class GameOverUI : MonoBehaviour
         {
             PlayerPrefs.SetInt("HighScore", PlayerPrefs.GetInt("score", 0));
         }
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene("Game");
     }
 }
