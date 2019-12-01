@@ -3,39 +3,51 @@ using UnityEngine;
 
 public class PowerUpSpawner : MonoBehaviour
 {
-    public GameObject[] PowerUpsPrefabs;
+    
+    public GameObject treasure;
     public Vector3 rangeToSpawn;
+    public float PointsToPowerUp = 50f;
 
-    private int randObjectIndex;
     private CharacterController player;
+    private AudioManager.AudioManager audiomanager;
+    private bool boxInstantiated = false;
+    private float currentScore;
 
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterController>();
+        currentScore = player.GetScore();
+        audiomanager = AudioManager.AudioManager.m_instance;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (DashBarUI.dashPoints == DashBarUI.maxDashPoints)
+        if ((player.GetScore() % PointsToPowerUp) < Mathf.Epsilon && !boxInstantiated)
         {
-            Debug.Log("Generating a new Power Up");
+            if (player.GetScore() == 0.0f)
+                return;
 
-            GeneratePowerUp();
+            if(audiomanager)
+                audiomanager.PlaySFX("TreasureSpawn");
 
-            DashBarUI.dashPoints = 0;
+            InstantiateTreasureBox();
+
+            boxInstantiated = true;
+
+            currentScore = player.GetScore();
         }
+
+        if (currentScore < player.GetScore())
+            boxInstantiated = false;
+
     }
 
-    private void GeneratePowerUp()
+    private void InstantiateTreasureBox()
     {
-        int size = PowerUpsPrefabs.Length;
-
-        randObjectIndex = Random.Range(0, size - 1);
-
         Vector3 spawnPosition = new Vector3(Random.Range(-rangeToSpawn.x, rangeToSpawn.x), Random.Range(-rangeToSpawn.y, rangeToSpawn.y), 1);
-
-        Instantiate(PowerUpsPrefabs[randObjectIndex], spawnPosition + transform.TransformPoint(0, 0, 0), gameObject.transform.rotation);
+        Debug.Log("SpawnPoistion is: " + spawnPosition);
+        Instantiate(treasure, spawnPosition, gameObject.transform.rotation);
     }
 
 }

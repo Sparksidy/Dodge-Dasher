@@ -1,13 +1,14 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 public class Score : MonoBehaviour
 {
-    Text score;
+    private TextMeshProUGUI score;
     public GameObject Player;
 
     void Start()
     {
-        score = GetComponent<Text>();
+        score = GetComponent<TextMeshProUGUI>();
     }
 
     // Update is called once per frame
@@ -18,7 +19,7 @@ public class Score : MonoBehaviour
             CharacterController player = Player.GetComponent<CharacterController>();
             if (player)
             {
-                score.text = "Score:  " + player.GetScore();
+                score.SetText(player.GetScore().ToString());
             }
         }
     }

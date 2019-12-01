@@ -8,7 +8,7 @@ public class EnemyFollow : MonoBehaviour
     public float speed = 2f;
     public float followDuration = 5f;
     public float breakDuration = 2f;
-    public int damage = 10;
+    public int targetDamage = 10;
     public int health = 50;
     public float deathAnimationDelay = 0.25f;
     public enum EnemyType
@@ -20,18 +20,22 @@ public class EnemyFollow : MonoBehaviour
     }
     public EnemyType enemytype;
     public GameObject bloodEffect;
-
-
+    
     private bool startFollow;
     private Transform targetTransform;
     private GameObject player;
     private float breakTimer;
     private float waitTimer;
 
+    bool followPlayer = true;
+
+    AudioSource source;
+
     void Start()
     {
         startFollow = true;
 
+        source = this.GetComponent<AudioSource>();
         player = GameObject.FindGameObjectWithTag("Player");
         targetTransform = player.GetComponent<Transform>();
     }
@@ -40,7 +44,8 @@ public class EnemyFollow : MonoBehaviour
     {
         if(targetTransform != null)
         {
-            MoveTowardsPlayer();
+            if(followPlayer)
+                MoveTowardsPlayer();
 
             if (health <= 0)
             {
@@ -71,11 +76,12 @@ public class EnemyFollow : MonoBehaviour
         }
     }
 
-    private void PlayDeathAnim()
+    public void PlayDeathAnim()
     {
         switch (enemytype)
         {
             case EnemyType.EASY:
+                Debug.Log("Playing Death Animation");
                 anim.Play("BaseEnemyDeath");
                 break;
             case EnemyType.MEDIUM:
@@ -89,23 +95,44 @@ public class EnemyFollow : MonoBehaviour
 
     private void DestroyEnemy()
     {
+        gameObject.transform.localScale = Vector3.one * 1.25f;
         PlayDeathAnim();
         Destroy(gameObject, anim.GetCurrentAnimatorStateInfo(0).length - deathAnimationDelay);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject == player)
+        /*if (collision.gameObject == player)
         {
             CharacterController controller = player.GetComponent<CharacterController>();
-            controller.TakeDamage(damage);
-        }
+            if(!controller.IsPlayerDashing())
+                controller.TakeDamage(targetDamage);
+        }*/
     }
 
     public void TakeDamage(int damage)
     {
-        //Instantiate(bloodEffect, transform.position, Quaternion.identity);
+        
+        Instantiate(bloodEffect, new Vector3(transform.position.x, transform.position.y + (float)1.15f, transform.position.z)  , Quaternion.identity);
+        followPlayer = false;
+        source.Play();
+        SpriteFlash();
         health -= damage;
+    }
+
+    void SpriteFlash()
+    {
+        SpriteRenderer sprite = GetComponent<SpriteRenderer>();
+        Color currColor = sprite.color;
+        sprite.color = Color.red;
+        StartCoroutine(WaitForOneSecond(currColor));
+    }
+
+    IEnumerator WaitForOneSecond(Color color)
+    {
+        SpriteRenderer sprite = GetComponent<SpriteRenderer>();
+        yield return new WaitForSeconds(1f);
+        followPlayer = true;
     }
 
     public EnemyType GetEnemyType()

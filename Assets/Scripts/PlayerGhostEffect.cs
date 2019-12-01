@@ -11,7 +11,6 @@ public class PlayerGhostEffect : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("Instantiated!!!");
         sprite = GetComponent<SpriteRenderer>();
 
         transform.position =  GameObject.FindGameObjectWithTag("Player").transform.position;

@@ -1,29 +1,25 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
-    Text health;
+    Image health;
     public GameObject Player;
+    public float maxHealthAmount = 100.0f;
+    CharacterController player;
 
     void Start()
     {
-        health = GetComponent<Text>();
+        health = GetComponent<Image>();
+        player = Player.GetComponent<CharacterController>();
     }
 
     // Update is called once per frame
     void Update()
-    {
-        if(Player)
+    {   
+        if (player)
         {
-            CharacterController player = Player.GetComponent<CharacterController>();
-            if (player)
-            {
-                health.text = "Health:  " + player.GetHealth();
-            }
+            health.fillAmount = player.GetHealth() / maxHealthAmount;
         }
-       
     }
 }

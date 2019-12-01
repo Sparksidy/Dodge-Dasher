@@ -35,8 +35,6 @@ public class StaminaBarUI : MonoBehaviour
         }
         if(player.IncreaseStamina())
         {
-            Debug.Log("Stamina Increasing...");
-
             stamina = Mathf.Clamp(stamina + staminaGainDashPoints, 0.0f, maxStamina);
 
             player.increaseStamina = false;

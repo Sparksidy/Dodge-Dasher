@@ -12,11 +12,15 @@ public class HomingMissile : MonoBehaviour
     public float speed = 10;
     public float rotateSpeed = 20;
 
+    private AudioManager.AudioManager audioManager;
+
     // Start is called before the first frame update
     void Start()
     {
         Target = GameObject.FindGameObjectWithTag("Enemy");
         rb = GetComponent<Rigidbody2D>();
+
+        audioManager = AudioManager.AudioManager.m_instance;
     }
 
     // Update is called once per frame
@@ -45,7 +49,10 @@ public class HomingMissile : MonoBehaviour
         //If hit enemy destroy the enemy and the missile
         if(collision.tag == "Enemy")
         {
-            Destroy(collision.gameObject);
+            if (audioManager)
+                audioManager.PlaySFX("MissileHit");
+            collision.GetComponent<EnemyFollow>().PlayDeathAnim();
+            Destroy(collision.gameObject, collision.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length - 0.25f);
             Destroy(gameObject);
         }
     }

@@ -49,3 +49,4 @@ MonoBehaviour:
   - {fileID: 4075994919977659053, guid: 67a8c8515cd6be64fa9b9130ca9c7bd2, type: 3}
   rangeToSpawn: {x: 45, y: 15, z: 0}
   timebetweenSpawn: 10
+  maxEnemyAtATime: 3

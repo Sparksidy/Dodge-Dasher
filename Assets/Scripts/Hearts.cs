@@ -21,8 +21,6 @@ public class Hearts : MonoBehaviour
     {
         int number = 100 / sprites.Length;
         int index = ((int)player.GetHealth() / number);
-
-        Debug.Log("The index is : " + index);
         if(index > 0)
             HeartUI.sprite = sprites[index - 1];
     }

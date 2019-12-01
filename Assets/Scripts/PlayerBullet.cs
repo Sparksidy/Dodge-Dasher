@@ -18,7 +18,6 @@ public class PlayerBullet : MonoBehaviour
         {
             moveDirection = (target.transform.position - transform.position).normalized;
             rb.velocity = moveDirection * speed;
-            Debug.Log("The velocity is: " + rb.velocity);
         }
 
     }

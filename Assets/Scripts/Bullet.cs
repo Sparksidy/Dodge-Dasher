@@ -12,15 +12,20 @@ public class Bullet : MonoBehaviour
 
     public GameObject Target;
 
+    bool moveBullet = true;
+
     void Start()
     {
         Target = GameObject.FindGameObjectWithTag("Player");
 
         if(Target)
         {
-            Vector2 direction = Target.GetComponent<Transform>().position - transform.position;
-            direction.Normalize();
-            rb.velocity = direction * speed;
+            if(moveBullet)
+            {
+                Vector2 direction = Target.GetComponent<Transform>().position - transform.position;
+                direction.Normalize();
+                rb.velocity = direction * speed;
+            }
         }
     }
 
@@ -34,19 +39,27 @@ public class Bullet : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            
-            Debug.Log("Collided with player");
             CharacterController player = collision.GetComponent<CharacterController>();
 
             if(player)
             {
                 player.TakeDamage(PerBulletDamage);
-                speed = 0;
-                Debug.Log("The speed is " + speed);
+
+                moveBullet = false;
+                rb.velocity = Vector2.zero;
                 anim.Play("Bullet_Destroy");
                 Destroy(gameObject, anim.GetCurrentAnimatorStateInfo(0).length);
             }
         }
+
+        if(collision.tag == "Wall")
+        {
+            moveBullet = false;
+            rb.velocity = Vector2.zero;
+            anim.Play("Bullet_Destroy");
+            Destroy(gameObject, anim.GetCurrentAnimatorStateInfo(0).length);
+        }
+
     }
 
 
