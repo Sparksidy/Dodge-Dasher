@@ -22,4 +22,5 @@ public class Health : MonoBehaviour
             health.fillAmount = player.GetHealth() / maxHealthAmount;
         }
     }
+    
 }

@@ -23,7 +23,7 @@ public class CharacterController : MonoBehaviour
 
 
     private float nextDash;
-    private float health = 100;
+    public float health = 100;
     private float score = 0;
     private Vector2 movement;
     private bool dashing = false;
@@ -32,7 +32,6 @@ public class CharacterController : MonoBehaviour
     private bool generateNewDashPoint = true;
     private int cherrypickups = 0;
     private AudioManager.AudioManager audioManager;
-    private int counterForSpriteFlashes;
     private Color originalColor;
 
     [System.NonSerialized]
@@ -191,8 +190,8 @@ public class CharacterController : MonoBehaviour
                 DamageEnemy(collision);
             if (!IsPlayerDashing())
             {
-                Shake shake = GameObject.FindGameObjectWithTag("ScreenShake").GetComponent<Shake>();
-                shake.CamShake();
+                //Shake shake = GameObject.FindGameObjectWithTag("ScreenShake").GetComponent<Shake>();
+                //shake.CamShake();
                 Handheld.Vibrate();
                 DamagePlayer();
             }

@@ -158,7 +158,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 0
+  m_firstOverflowCharacterIndex: -1
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -179,16 +179,16 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 10.961299, y: 1.5375472, z: 5.20661, w: 1.9767612}
+  m_margin: {x: 10.961299, y: 1.5375472, z: 6.9149356, w: 1.9767612}
   m_textInfo:
     textComponent: {fileID: 3354655613572865374}
-    characterCount: 0
+    characterCount: 3
     spriteCount: 0
     spaceCount: 0
-    wordCount: 0
+    wordCount: 2
     linkCount: 0
-    lineCount: 0
-    pageCount: 0
+    lineCount: 1
+    pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -217,3 +217,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c257909277cc491e97b5d3057beff07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveYSpeed: 5
+  disappearTimer: 0.5
+  disappearSpeed: 6

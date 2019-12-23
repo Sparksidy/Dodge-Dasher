@@ -1,0 +1,355 @@
+fileFormatVersion: 2
+guid: 89d8bad24f02d4758b1ed2479b1e4c37
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6961340920030385776
+    second: '%E2%80%94Pngtree%E2%80%94korean%20splash%20ink%20png%20hd_3206205_0'
+  - first:
+      213: -5609749960775804719
+    second: '%E2%80%94Pngtree%E2%80%94korean%20splash%20ink%20png%20hd_3206205_1'
+  - first:
+      213: 6637521018948674953
+    second: '%E2%80%94Pngtree%E2%80%94korean%20splash%20ink%20png%20hd_3206205_2'
+  - first:
+      213: 100825018571392791
+    second: '%E2%80%94Pngtree%E2%80%94korean%20splash%20ink%20png%20hd_3206205_3'
+  - first:
+      213: -1881713106662462717
+    second: '%E2%80%94Pngtree%E2%80%94korean%20splash%20ink%20png%20hd_3206205_4'
+  - first:
+      213: -8633049356018449953
+    second: '%E2%80%94Pngtree%E2%80%94korean%20splash%20ink%20png%20hd_3206205_5'
+  - first:
+      213: 7469721406090939445
+    second: '%E2%80%94Pngtree%E2%80%94korean%20splash%20ink%20png%20hd_3206205_6'
+  - first:
+      213: -371384993971521122
+    second: '%E2%80%94Pngtree%E2%80%94korean%20splash%20ink%20png%20hd_3206205_7'
+  - first:
+      213: -571239149051048857
+    second: '%E2%80%94Pngtree%E2%80%94korean%20splash%20ink%20png%20hd_3206205_8'
+  - first:
+      213: 284412057671154812
+    second: '%E2%80%94Pngtree%E2%80%94korean%20splash%20ink%20png%20hd_3206205_9'
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: '%E2%80%94Pngtree%E2%80%94korean%20splash%20ink%20png%20hd_3206205_0'
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 1036
+        width: 426
+        height: 309
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a263104c1132743e58d8b984fce49cfa
+      internalID: -6961340920030385776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '%E2%80%94Pngtree%E2%80%94korean%20splash%20ink%20png%20hd_3206205_1'
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 1030
+        width: 340
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 482c0d11612434bab92ab57219268972
+      internalID: -5609749960775804719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '%E2%80%94Pngtree%E2%80%94korean%20splash%20ink%20png%20hd_3206205_2'
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 1052
+        width: 316
+        height: 298
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c38ea9cf1b7045fe8cbc1912d95f097
+      internalID: 6637521018948674953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '%E2%80%94Pngtree%E2%80%94korean%20splash%20ink%20png%20hd_3206205_3'
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 663
+        width: 427
+        height: 314
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15bd62e333d0346569009f3ebe849856
+      internalID: 100825018571392791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '%E2%80%94Pngtree%E2%80%94korean%20splash%20ink%20png%20hd_3206205_4'
+      rect:
+        serializedVersion: 2
+        x: 622
+        y: 676
+        width: 304
+        height: 315
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0902bc3c1cfb64854a8a52d2377998ed
+      internalID: -1881713106662462717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '%E2%80%94Pngtree%E2%80%94korean%20splash%20ink%20png%20hd_3206205_5'
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 383
+        width: 438
+        height: 205
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a9bd89f1766741868b71e4d4638841a
+      internalID: -8633049356018449953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '%E2%80%94Pngtree%E2%80%94korean%20splash%20ink%20png%20hd_3206205_6'
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 377
+        width: 377
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3744d248e7b3648d4b93bc93fc191bcc
+      internalID: 7469721406090939445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '%E2%80%94Pngtree%E2%80%94korean%20splash%20ink%20png%20hd_3206205_7'
+      rect:
+        serializedVersion: 2
+        x: 609
+        y: 356
+        width: 334
+        height: 268
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a41b0756936fa43eebaba140b411de2f
+      internalID: -371384993971521122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '%E2%80%94Pngtree%E2%80%94korean%20splash%20ink%20png%20hd_3206205_8'
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 55
+        width: 509
+        height: 267
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13145735f586e423084d18d193fef1f3
+      internalID: -571239149051048857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: '%E2%80%94Pngtree%E2%80%94korean%20splash%20ink%20png%20hd_3206205_9'
+      rect:
+        serializedVersion: 2
+        x: 601
+        y: 61
+        width: 337
+        height: 282
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b515d1aac2a0e4cbd80b0edcc5c4ae9f
+      internalID: 284412057671154812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

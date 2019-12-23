@@ -22,6 +22,7 @@ public class DashPointSpawner : MonoBehaviour
             player.DoNotGenerateDashPoint();
             randObjectIndex = Random.Range(0, objectsToSpawnRandomly.Length - 1);
             Vector3 spawnPosition = new Vector3(Random.Range(-rangeToSpawn.x, rangeToSpawn.x), Random.Range(-rangeToSpawn.y, rangeToSpawn.y), 1);
+
             Instantiate(objectsToSpawnRandomly[randObjectIndex], spawnPosition + transform.TransformPoint(0, 0, 0), gameObject.transform.rotation);
 
         }

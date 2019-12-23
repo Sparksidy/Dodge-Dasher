@@ -39,7 +39,6 @@ public class EnemySpawner : MonoBehaviour
         int size = EnemyPrefabs.Length;
 
         randObjectIndex = Random.Range(1, size + 1);
-        Debug.Log("The index is: " + randObjectIndex + "Size is: " + size);
 
         Vector3 spawnPosition = new Vector3(Random.Range(-rangeToSpawn.x, rangeToSpawn.x), Random.Range(-rangeToSpawn.y, rangeToSpawn.y), 1);
 

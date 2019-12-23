@@ -18,7 +18,6 @@ public class TreasureBox : MonoBehaviour
 
     void InstantiatePowerUp()
     {
-        
         int size = PowerUpsPrefabs.Length;
 
         randObjectIndex = Random.Range(1, size + 1);
