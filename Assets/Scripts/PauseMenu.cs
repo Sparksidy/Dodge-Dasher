@@ -30,13 +30,20 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
+        AudioManager.AudioManager.m_instance.PlaySFX("Menu_UI");
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1;
         isPaused = false;
     }
 
+    public void PlayUISound()
+    {
+        AudioManager.AudioManager.m_instance.PlaySFX("Menu_UI");
+    }
+
     public void Pause()
     {
+        AudioManager.AudioManager.m_instance.PlaySFX("Menu_UI");
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0;
         isPaused = true;
@@ -44,11 +51,13 @@ public class PauseMenu : MonoBehaviour
 
     public void LoadMenu()
     {
+        AudioManager.AudioManager.m_instance.PlaySFX("Menu_UI");
         SceneManager.LoadScene("MainMenu");
     }
 
     public void QuitGame()
     {
+        AudioManager.AudioManager.m_instance.PlaySFX("Menu_UI");
         Application.Quit();
     }
 }

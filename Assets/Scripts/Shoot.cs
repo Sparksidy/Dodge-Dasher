@@ -28,4 +28,9 @@ public class Shoot : MonoBehaviour
             timer = 0.0f;
         }
     }
+
+    private void OnDisable()
+    {
+        AudioManager.AudioManager.m_instance.PlayMusic("BG_1");
+    }
 }

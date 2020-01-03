@@ -13,6 +13,7 @@ public class GameOverUI : MonoBehaviour
 
     void Start()
     {
+        AudioManager.AudioManager.m_instance.PlayMusic("Game_Over");
         scoreText.GetComponent<TextMeshProUGUI>().text = PlayerPrefs.GetInt("score").ToString();
         highScoreText.GetComponent<TextMeshProUGUI>().text = PlayerPrefs.GetInt("HighScore", 0).ToString();
 
@@ -24,11 +25,14 @@ public class GameOverUI : MonoBehaviour
 
     public void RestartGame()
     {
+        AudioManager.AudioManager.m_instance.PlaySFX("Menu_UI");
         SceneManager.LoadScene("Game");
     }
 
     public void QuitGame()
     {
+        AudioManager.AudioManager.m_instance.PlaySFX("Menu_UI");
         Application.Quit();
     }
+
 }

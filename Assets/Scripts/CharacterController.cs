@@ -20,6 +20,8 @@ public class CharacterController : MonoBehaviour
     public int perDashPointValue;
     public int EnemyHitDamage = 30;
     public GameObject playerDamageEffect;
+    public static bool showAds = true;
+    
 
 
     private float nextDash;
@@ -33,6 +35,8 @@ public class CharacterController : MonoBehaviour
     private int cherrypickups = 0;
     private AudioManager.AudioManager audioManager;
     private Color originalColor;
+    private int showAdsCounter = 2; //After how many times to show ad
+    private int currentAdCounter = 0;
 
     [System.NonSerialized]
     public bool increaseStamina;
@@ -53,6 +57,8 @@ public class CharacterController : MonoBehaviour
         source = this.GetComponent<AudioSource>();
         audioManager = AudioManager.AudioManager.m_instance;
         originalColor = GetComponent<SpriteRenderer>().color;
+
+        
     }
 
     void HandleIOSMovement()
@@ -148,12 +154,32 @@ public class CharacterController : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
-
+        currentAdCounter++;
+        
+        //Show Reward Ads after every second time player's health goes to 10
+        if(showAds && health < 10 && currentAdCounter >= showAdsCounter)
+        {
+            //AdController.instance.ShowRewardVideoAds();
+            currentAdCounter = 0;
+        }
+        
         if (health <= 0)
         {
-            FindObjectOfType<GameManager>().EndGame();
-            Destroy(gameObject);
+            audioManager.PlaySFX("Player_Death");
+            StartCoroutine(Death());
         }
+    }
+
+    IEnumerator Death()
+    {
+        animator.Play("Player_DeathAnim");
+        movement = Vector2.zero;
+
+        yield return new WaitForSeconds(1.0f);
+
+        Destroy(gameObject, this.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length + 0.5f);
+
+        FindObjectOfType<GameManager>().EndGame();
     }
 
     public void Score()

@@ -10,10 +10,10 @@ public class TutorialManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        AudioManager.AudioManager.m_instance.PlayMusic("BG_3");
         totalObjects = textObjects.Length;
         currentIndex = 0;
     }
-
 
     public void ShowTutorial()
     {

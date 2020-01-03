@@ -60,7 +60,10 @@ public class EnemyFollow : MonoBehaviour
 
         if (waitTimer < followDuration && startFollow)
         {
-            transform.position = Vector2.MoveTowards(transform.position, targetTransform.position, speed * Time.deltaTime);
+            if(Vector3.Distance(transform.position, targetTransform.position) > 0.5)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, targetTransform.position, speed * Time.deltaTime);
+            }
         }
         else
         {
@@ -98,6 +101,10 @@ public class EnemyFollow : MonoBehaviour
         gameObject.transform.localScale = Vector3.one * 1.25f;
         PlayDeathAnim();
         Destroy(gameObject, anim.GetCurrentAnimatorStateInfo(0).length - deathAnimationDelay);
+        /*if(enemytype == EnemyType.HARD)
+        {
+            AudioManager.AudioManager.m_instance.PlayMusic("BG_1");
+        }*/
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

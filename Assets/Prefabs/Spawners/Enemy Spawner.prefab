@@ -44,9 +44,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyPrefabs:
-  - {fileID: 5355297093588720787, guid: 7abaa10cb244db1458af7415134c86f7, type: 3}
-  - {fileID: 1459136001914925087, guid: 532986c3806d6564096f3a959f01e7a8, type: 3}
   - {fileID: 4075994919977659053, guid: 67a8c8515cd6be64fa9b9130ca9c7bd2, type: 3}
+  - {fileID: 2151371146177978198, guid: 3f41355ab047a49738271d0ad8ed768c, type: 3}
   rangeToSpawn: {x: 45, y: 15, z: 0}
-  timebetweenSpawn: 10
+  enemyShoot: {fileID: 5355297093588720787, guid: 7abaa10cb244db1458af7415134c86f7,
+    type: 3}
+  timebetweenSpawn: 8
   maxEnemyAtATime: 3
